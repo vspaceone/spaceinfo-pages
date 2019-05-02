@@ -78,14 +78,14 @@
   $.get("https://feeds.noppelmax.online/heise.xml", function (data) {
 
     dat = $(data);
-    dat.find("item").each(function () {
+    console.log(dat);
+    dat.find("entry").each(function () {
+	console.log("Found item");
         var $this = $(this),
             item = {
                 title: $this.find("title").text(),
-                link: $this.find("link").text(),
-                description: $this.find("description").text(),
-                pubDate: new Date($this.find("pubDate").text()),
-                author: $this.find("author").text()
+                description: $this.find("summary").text(),
+                pubDate: new Date($this.find("published").text())
             };
             items.push(item);
         });
