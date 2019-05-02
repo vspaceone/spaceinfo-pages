@@ -1,6 +1,6 @@
 # spaceinfo-pages
 
-repository for the slides of the spaceinfo-terminals. The server software is described [https://github.com/vspaceone/spaceinfo](here).
+repository for the slides of the spaceinfo-terminals. The server software is described [here](https://github.com/vspaceone/spaceinfo).
 
 ## So sieht das bei uns aus:
 ![Bildschirme im Space](spaceinfo.jpg)
