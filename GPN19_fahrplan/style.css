@@ -1,0 +1,78 @@
+  body{
+    background-color: #181818;
+    color: #d8d8d8;
+  }
+  .card {
+    background-color: #181818;
+    color: #d8d8d8;
+  }
+
+  .headercard:hover {
+	background-color: #181818;
+  }
+
+	h2 {
+		font-size: 1.3em;
+	}
+
+
+  .bordercolor{
+    border-color: #7cafc2;
+  }
+
+  .card{
+    margin: 5px;
+  }
+
+  .timeto {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+  }
+
+  .future {
+    color: #a1b56c;
+  }
+
+  .past {
+    color: #ab4642;
+  }
+
+	.title {
+		color: #7cafc2;
+	}
+
+	.author{
+		color: #ba8baf;
+	}
+
+	.datecolor{
+	}
+
+	a {
+		color: #7cafc2;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: #86c1b9;
+
+	}
+
+	.fav-title{
+		color: #f7dd88;
+		fill: #f7dd88;
+	}
+
+	.fav{
+		border-color: #f7dd88;
+
+	}
+
+	.unfav-title{
+		color: #7cafc2;
+	}
+
+	.favbar{
+		cursor: pointer;
+	}

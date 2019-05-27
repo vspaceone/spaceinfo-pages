@@ -17,54 +17,71 @@
 	
 
 
-  <script  id="news_template" type="x-tmpl-mustache">
+	  <script  id="news_template" type="x-tmpl-mustache">
 
-  <div class="card text-center headercard">
-  <div class="card-body">
-  <h2 class="card-title">{{roomname}}</h2>
-  </div>
-  </div>
-  {{#items}}
+	  <div class="card text-center headercard">
+	  <div class="card-body">
+	  <h2 class="card-title">{{roomname}}</h2>
+	  </div>
+	  </div>
+	  {{#items}}
 
-  <div class="card bordercolor cardhidden-{{hidden}} {{fav}}" id="id{{id}}">
-  <div class="card-body" style="position:relative">
-  <a href="{{url}}"><h5 class="card-title title {{fav}}-title" id="titleid{{id}}">{{title}}</h5></a>
-  <h6 class="card-subtitle mb-2 author">{{author}}</h6>
-  <!--p class="card-text">{{room}}</p-->
-	<p class="card-text datecolor">{{datestring}}</p>
-  <p class="card-text"><small>{{abstract}} ({{lang}})</small></p>
-  <!--p class="card-text"><small class="text-muted">Track: {{track}}</small></p-->
-	<p class="card-text oi oi-star favbar {{fav}}-title" id="starid{{id}}" style="position:absolute; right: 5px; top: 5px" onclick="like({{id}});"></p>
-  <p class="card-text timeto {{when}}" id="timeto{{id}}"><small id="txt{{id}}">{{txt}} </small><b id="hours{{id}}"> {{hours}}</b>h <b id="mins{{id}}">{{mins}}</b>mins</p>
-  </div>
-  </div>
+	  <div class="card bordercolor cardhidden-{{hidden}} {{fav}}" id="id{{id}}">
+	  <div class="card-body" style="position:relative">
+	  <a href="{{url}}"><h5 class="card-title title {{fav}}-title" id="titleid{{id}}">{{title}}</h5></a>
+	  <h6 class="card-subtitle mb-2 author">{{author}}</h6>
+	  <!--p class="card-text">{{room}}</p-->
+		<p class="card-text datecolor">{{datestring}}</p>
+	  <p class="card-text"><small>{{abstract}} ({{lang}})</small></p>
+	  <!--p class="card-text"><small class="text-muted">Track: {{track}}</small></p-->
+		<p class="card-text oi oi-star favbar {{fav}}-title" id="starid{{id}}" style="position:absolute; right: 5px; top: 5px" onclick="like({{id}});"></p>
+	  <p class="card-text timeto {{when}}" id="timeto{{id}}"><small id="txt{{id}}">{{txt}} </small><b id="hours{{id}}"> {{hours}}</b>h <b id="mins{{id}}">{{mins}}</b>mins</p>
+	  </div>
+	  </div>
 
-  {{/items}}
-  </script>
+	  {{/items}}
+	  </script>
 </head>
 
 <body>
 
   <div class="card-group">
-    <div class="card-column" style="width: 15%;" id="cards_ZKM_Medientheater">
+    <div class="card-column" style="width: 25%;">
 
     </div>
-    <div class="card-column" style="width: 15%;"  id="cards_HfG_Studio">
+    <div class="card-column" style="width: 50%;">
+	<div class="card bordercolor">
+  		<div class="card-body" style="position:relative">
+  			<a href="{{url}}"><h5 class="card-title title">Datenschutzerklaerung</h5></a>
+  			<h6 class="card-subtitle mb-2 author">Cookies</h6>
+  			<p class="card-text">Wir verwenden Cookies um Favoriten lokal auf Ihrem Rechner zu speichern. Keines der Cookies wird jemals an unseren Server übertragen. Die Cookies laufen spätestens am 5.Juni 2019 ab. Also einige Tage nach der GPN19.</p>
+			<h6 class="card-subtitle mb-2 author">Tracking und Logs</h6>
+  			<p class="card-text">Wir verwenden kein Trackingsystem und speichern keine Logs ihrer Zugriffe auf unsere Server. Bitte beachten Sie die Datenschutzerklärung der von uns verwendeten Bibliotheken:
+			<ul>
+				<li>Bootstrap4.1.3</li>
+				<li>JQuery-3.3.1</li>
+				<li>JQuery.cookie1.4.1</li>
+				<li>Mustache3.0.1</li>
+				<li>Popper1.14.3</li>
+				<li>Sugar2.0.4</li>
+				
+			</ul></p>
+ 	 	</div>	
+  	</div>
 
+	<div class="card bordercolor">
+  		<div class="card-body" style="position:relative">
+  			<a href="{{url}}"><h5 class="card-title title">Impressum</h5></a>
+  			<h6 class="card-subtitle mb-2 author">Angaben gemäß § 5 TMG:</h6>
+  			<p class="card-text">Maximilian Noppel<br>Essenweinstraße 36a<br>76131 Karlsruhe</p>
+			<h6 class="card-subtitle mb-2 author">Links:</h6>
+			<p class="card-text">Die von mir verlinkten Seiten wurden nach bestem Gewissen geprüft, dennoch übernehme ich keinerlei Verantwortung für deren Inhalte.</p>
+			<h6 class="card-subtitle mb-2 author">Kontakt:</h6>
+  			<p class="card-text">max@noppelmax.online</p>
+ 	 	</div>	
+  	</div>
     </div>
-    <div class="card-column" style="width: 14%;"  id="cards_ZKM_Vortragssaal">
-
-    </div>
-    <div class="card-column" style="width: 14%;"  id="cards_ZKM_OpenHUB">
-
-    </div>
-    <div class="card-column" style="width: 14%;"  id="cards_ZKM_AckerSpace">
-
-    </div>
-		<div class="card-column" style="width: 14%;"  id="cards_ZKM_CodeHUB">
-
-    </div>
-		<div class="card-column" style="width: 14%;"  id="cards_Lounge">
+    <div class="card-column" style="width: 25%;">
 
     </div>
   </div>
