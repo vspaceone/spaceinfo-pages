@@ -45,6 +45,16 @@
 
 <body>
 
+	<div id="cookiewarning">
+		<p>Diese Webseite verwendet Cookies zum Speichern von Favoriten.<br><button  style="margin: 10px;" class="btn btn-primary" type="button" onclick="acceptCookies()">Verstanden</button></p>
+	</div>
+
+	<div class="card text-center headercard" style="width: 100%; font-size: 2em; margin: 0px; padding: 1px;">
+  <div class="card-body">
+  <h2 class="card-title" id="clock">10:30 Uhr</h2>
+  </div>
+  </div>
+
   <div class="card-group">
     <div class="card-column" style="width: 15%;" id="cards_ZKM_Medientheater">
 
@@ -86,6 +96,34 @@
 
   rooms = ["ZKM_Medientheater","HfG_Studio","ZKM_Vortragssaal","ZKM_OpenHUB","ZKM_AckerSpace","ZKM_CodeHUB","Lounge"];
 
+	var month = [
+	"Januar",
+	"Februar",
+	"März",
+	"April",
+	"Mai",
+	"Juni",
+	"Juli",
+	"August",
+	"September",
+	"Oktober",
+	"November",
+	"Dezember"
+	];
+
+	Number.prototype.pad = function(size) {
+		var s = String(this);
+		while (s.length < (size || 2)) {s = "0" + s;}
+		return s;
+	}
+
+	function acceptCookies(){
+		var date = new Date("2019-06-04T00:00:00Z");
+		$.cookie('accept', 1,  { expires: date });
+		$("#cookiewarning").remove();
+
+
+	}
 	function like(id){
 		var date = new Date("2019-06-04T00:00:00Z");
 		if($.inArray(id,favs)!=-1){
@@ -134,6 +172,16 @@
 
 	};
 
+	function update() {
+    var d = new Date(Date.now());
+    var clock = d.getHours().pad(2) + ":" + d.getMinutes().pad(2);
+    var day = d.getDate() + ". " + month[(d.getMonth())] + " " + d.getFullYear();
+
+    $("#clock").html("<small>19.Gulaschprogrammiernacht </small>|<small> "+ day + "</small> | <small>" + clock + " Uhr CEST</small>");
+  }
+  setInterval(update,1000);
+  update();
+
   function parseH( t ) {
     var d = new Date();
     var time = t.match( /(\d+)(?::(\d\d))?\s*(p?)/ );
@@ -153,8 +201,18 @@
   }
 
   $( document ).ready(function() {
+
+		try{
+			if($.cookie("accept")){
+				$("#cookiewarning").remove();
+			}
+		}catch(e) {
+		}
 		try {
 			favs = JSON.parse($.cookie('favs'));
+			if($.cookie("accept")){
+				$("#cookiewarning").remove();
+			}
 		} catch (e) {
 			favs = []
 		} finally {
