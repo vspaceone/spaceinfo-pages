@@ -1,0 +1,93 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <style>
+  body{
+    background-color: black;
+    color: #e0e0e0;
+    overflow: hidden;
+  }
+
+  #container {
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    margin-top: 5%;
+  }
+
+  #txt{
+    font-size: 4em;
+  }
+  </style>
+
+
+</head>
+
+<body>
+  <div id="container">
+    <span id="txt"></span>
+  </div>
+
+  <script>
+
+  var header = [
+    "Art 1 (1) GG",
+    "Art 3 (3) GG",
+    "Art 3 (1) GG",
+    "Art 4 (1) GG",
+    "Art 5 (1) GG"
+  ]
+
+  var ethic = [
+    "Die Würde des Menschen ist unantastbar. Sie zu achten und zu schützen ist Verpflichtung aller staatlichen Gewalt.",
+    "Niemand darf wegen seines Geschlechtes, seiner Abstammung, seiner Rasse, seiner Sprache, seiner Heimat und Herkunft, seines Glaubens, seiner religiösen oder politischen Anschauungen benachteiligt oder bevorzugt werden. Niemand darf wegen seiner Behinderung benachteiligt werden.",
+    "Alle Menschen sind vor dem Gesetz gleich.",
+    "Die Freiheit des Glaubens, des Gewissens und die Freiheit des religiösen und weltanschaulichen Bekenntnisses sind unverletzlich.",
+    "Jeder hat das Recht, seine Meinung in Wort, Schrift und Bild frei zu äußern und zu verbreiten und sich aus allgemein zugänglichen Quellen ungehindert zu unterrichten. Die Pressefreiheit und die Freiheit der Berichterstattung durch Rundfunk und Film werden gewährleistet. Eine Zensur findet nicht statt."
+  ]
+  var bgcolors = [
+    "#b31e1e",
+    "white",
+    "#1e3ab3",
+    "#299394",
+    "#ffe63b",
+    "#2a790f"
+  ]
+
+  var fgcolors = [
+    "white",
+    "black",
+    "white",
+    "white",
+    "black",
+    "white"
+  ]
+
+  i = 0;
+
+  function update(){
+    $("#txt").hide();
+    $("#txt").fadeIn(200).html(header[i] + ": <br>" +ethic[i]);
+    $("body").css("color", fgcolors[i]);
+    $("body").css("background-color", bgcolors[i]);
+
+    i++;
+    i = i % header.length;
+  }
+  setInterval(update,8000);
+  update();
+
+</script>
+
+</body>
+
+</html>
