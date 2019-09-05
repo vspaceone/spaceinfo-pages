@@ -88,7 +88,7 @@
 				<div class="key">Temperatur:</div>
 			</div>
     	<div class="col-sm-6">
-				<div id="bruecke-temperature" class="value">n/a</div>
+				<div id="bruecke-temperature" class="value">loading...</div>
     	</div>
   	</div>
 		<div class="row">
@@ -96,7 +96,7 @@
 				<div class="key">RH:</div>
 			</div>
 			<div class="col-sm-6">
-				<div id="bruecke-humidity" class="value">n/a</div>
+				<div id="bruecke-humidity" class="value">loading...</div>
 			</div>
 		</div></p>
 			</div>
@@ -109,7 +109,10 @@
   function update() {
     $.getJSON("https://vspace.one/spaceapi.json", function(d){
         $("#maschinenraum-temperature").text(d.sensors.temperature[0].value + "" + d.sensors.temperature[0].unit);
-	$("#maschinenraum-humidity").text(d.sensors.humidity[0].value + "" + d.sensors.humidity[0].unit);
+		$("#maschinenraum-humidity").text(d.sensors.humidity[0].value + "" + d.sensors.humidity[0].unit);
+
+		$("#bruecke-temperature").text(d.sensors.temperature[1].value + "" + d.sensors.temperature[1].unit);
+		$("#bruecke-humidity").text(d.sensors.humidity[1].value + "" + d.sensors.humidity[1].unit);
     });
 
   }
