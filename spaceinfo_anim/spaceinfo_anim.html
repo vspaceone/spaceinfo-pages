@@ -25,6 +25,11 @@ div.slide, div#emerging {
   right: 0;
   width: 100%;
   height: 100%;
+  
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 img.slide_bg, canvas#noise{
@@ -38,26 +43,31 @@ canvas#noise {
   image-rendering: pixelated;
 }
 
+.slide_text {
+  color: white;
+  -webkit-text-stroke: black 4px;
+  font-size: 12vh;
+}
+
 div#emerging {
   transition: 5s linear;
   opacity: 0.0;
 }</style>
 
-<div class="slide" id="loten">
-<img class="slide_bg" src="" loading="eager" fetchpriority="high"> <!-- first slide gets high prio -->
+<div class="slide" id="loten" style="background-image: url(loten.jpg)">
 <h1 class="slide_text">Löten...</h1>
 </div>
 
-
-<!-- use any of the following slide DIVs as a template -->
-<div class="slide" id="hacken">
-<img class="slide_bg" src="" loading="eager" fetchpriority="low">
-<h1 class="slide_text">Hacken...</h1>
+<div class="slide" id="schrauben" style="background-image: url(schrauben.jpg)">
+<h1 class="slide_text">Schrauben...</h1>
 </div>
 
-<div class="slide" id="machen">
-<img class="slide_bg" src="" loading="eager" fetchpriority="low">
+<div class="slide" id="machen" style="background-image: url(machen.jpg)">
 <h1 class="slide_text">Machen...</h1>
+</div>
+
+<div class="slide" id="pfuschen" style="background-image: url(pfuschen.jpg)">
+<h1 class="slide_text">Pfuschen...</h1>
 </div>
 
 
@@ -67,7 +77,7 @@ div#emerging {
 </div>
 
 <script>
-var slides = ['loten','hacken','machen']; //specify slides and order
+var slides = ['loten','schrauben','machen', 'pfuschen']; //specify slides and order
 var slide_index = 0;
 
 var next_slide_delay = 1500;
