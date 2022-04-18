@@ -92,7 +92,7 @@ function advanceSlide() {
   if (slide_index >= slides.length) slide_index = 0;
   
   if (next_slide_delay > 50) {
-    if (next_slide_delay < 600) next_slide_delay -= 25;
+    if (next_slide_delay < 650) next_slide_delay -= 25;
     else next_slide_delay -= 200;
   }
    
@@ -118,7 +118,8 @@ function initNoise(){
 }
 function doNoise() {
   for (var idx = 0; idx < noise_imgd.data.length; idx+=4) { //for all pixels of the canvas
-    var random_number = Math.floor(Math.random() * 255);
+    //var random_number = Math.floor(Math.random() * 255);
+	var random_number = (Math.random() > 0.5) * 255;
 	noise_imgd.data[idx+0] = random_number; //red
 	noise_imgd.data[idx+1] = random_number; //green
 	noise_imgd.data[idx+2] = random_number; //blue
