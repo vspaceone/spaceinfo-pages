@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!--
+Use like this:
+...
+template="1picture.html"
+
+[template_options]
+pic_url="pic.jpg"
+
+-->
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>spaceinfo single picture template</title>
+  <style>div {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#front {
+  max-height: 100%;
+  max-width: 100%;
+  filter: none;
+  z-index: 10;
+  position: fixed;
+}
+
+#back {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  filter: blur(100px);
+  z-index: 5;
+  height: 100%;
+  width:100%;
+}</style>
+</head>
+<body>
+  <div>
+    <img id="back" src="{{ pic_url }}">
+    <img id="front" src="{{ pic_url }}">
+  </div>
+</body>
+</html>
